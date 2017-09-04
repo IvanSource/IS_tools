@@ -29,6 +29,17 @@ def IS_Backdrop():
 
 IS_Backdrop()
 
+#Set Default format to 1080HD
+nuke.knobDefault("Root.format", "HD_1080")
+
+#TCL show Frame offset
+def IS_timeOffset():
+  x = nuke.thisNode()
+  if x != None:
+    label = x['label'].value()
+    x['label'].setValue('input()')
+
+IS_timeOffset()
 
 
 
