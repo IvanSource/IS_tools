@@ -12,7 +12,7 @@ toolbar = nuke.toolbar("Nodes")
 menu01 = toolbar.addMenu("CUSTOM MENU 1", icon="ICON NAME HERE.png")
 
 #gizmos that needs to be part of that menu
-menu01.addCommand("CUSTOMGIZMO", "nuke.createNode(\"CUSTOMGIZMO\")", icon="IMAGE NAME HERE.png")
+menu01.addCommand("eFibonacciGlow", "nuke.createNode(\"eFibonacciGlow\")", icon="eFibonacciGlow.png")
 menu01.addCommand("CUSTOMGIZMO", "nuke.createNode(\"CUSTOMGIZMO\")", icon="IMAGE NAME HERE.png")
 menu01.addCommand("CUSTOMGIZMO", "nuke.createNode(\"CUSTOMGIZMO\")", icon="IMAGE NAME HERE.png")
 
