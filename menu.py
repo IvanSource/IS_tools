@@ -17,35 +17,17 @@ menu01.addCommand("CUSTOMGIZMO", "nuke.createNode(\"CUSTOMGIZMO\")", icon="IMAGE
 menu01.addCommand("CUSTOMGIZMO", "nuke.createNode(\"CUSTOMGIZMO\")", icon="IMAGE NAME HERE.png")
 
 
+##CUSTOM STICKYNOTES COLOUR
+def IS_StickyNotes():
+    nuke.knobDefault("StickyNote.tile_color", "4294967295.0")
+
+IS_StickyNotes()
+
 ##CUSTOM BACKDROP COLOUR
-##Comment for GIT
-def IS_backdrop():
-    import nukescripts
-    import colorsys
+def IS_Backdrop():
+    nuke.knobDefault("autoBackdrop.tile_color", "555819519.0")
 
-    # create backdrop
-    node = nukescripts.autoBackdrop()
-
-    # TileColor to HSV
-    originalTileColor = node.knob('tile_color').value()
-    originalRGB = [(0xFF & originalTileColor >> i) / 255.0 for i in [24, 16, 8]]
-    originalHSV = colorsys.rgb_to_hsv(originalRGB[0], originalRGB[1], originalRGB[2])
-
-    # Custom Color
-    hue = originalHSV[0] * 0
-    saturation = originalHSV[1] * 0
-    value = originalHSV[2] * 0 + 0.13
-
-    # HSV to TileColor
-    newHSV = [hue, saturation, value]
-    newRGB = colorsys.hsv_to_rgb(newHSV[0], newHSV[1], newHSV[2])
-    newTileColor = int('%02x%02x%02x%02x' % (newRGB[0] * 255, newRGB[1] * 255, newRGB[2] * 255, 255), 16)
-
-    # Replace tile_color with NetTileColor
-    node.knob('tile_color').setValue(newTileColor)
-
-nuke.menu('Nodes').addCommand('Other/Backdrop', IS_backdrop, icon='Backdrop.png')
-nuke.menu("Nodes").addCommand("Other/Backdrop", "IS_backdrop()", "Alt+b")
+IS_Backdrop()
 
 
 
